@@ -1,0 +1,26 @@
+{
+  "name": "orca_programmer_portfolio",
+  "version": "1.0.0",
+  "description": "A simple website with projects to showcase programming skills",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrcaProgrammer/Portfolio.git"
+  },
+  "author": "Lukasz Poloczek-McCusker",
+  "bugs": {
+    "url": "https://github.com/OrcaProgrammer/Portfolio/issues"
+  },
+  "homepage": "https://github.com/OrcaProgrammer/Portfolio#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
