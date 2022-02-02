@@ -1,5 +1,6 @@
 const express = require('express');
-var { engine } = require('express-handlebars');
+const path = require('path');
+const { engine } = require('express-handlebars');
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.set('view engine', '.hbs');
 
 // App middleware
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // App Routes
 
