@@ -1,0 +1,64 @@
+
+<div class="rocket-section">
+
+    <h3>Rocket</h1>
+    <p>Input values for each of the stages and click calculate for find the basic properties of the rocket. 
+        Click on the add button to add another stage and refresh the page to reset everything.</p>
+
+    <div id="InputSection" class="input-section">
+
+        <div class="input-box">
+            <form action="">
+                <p>Payload Mass:</p>
+                <input type="number" class="payload-mass-input" value="">Kg</input>
+            </form>
+        </div>
+        
+        <div class="input-display">
+            <p style="position: relative; top: 7rem; left: 4.4rem;">Payload</p>
+            <img src="/img/payload.svg" alt="Image of a payload">
+        </div>
+
+        <div class="input-box">
+            <form>
+                <p class="stage-launch-mass">Stage 1 Launch Mass:</p>
+                <input type="number" class="launch-mass-input" value="">Kg</input>
+
+                <p class="stage-propellant-mass">Stage 1 Propellant Mass:</p>
+                <input type="number" class="prop-mass-input" value="">Kg</input>
+
+                <p class="stage-isp">Stage 1 ISP:</p>
+                <input type="number" class="isp-input">s</input>
+            </form>
+        </div>
+
+        <div class="input-display">
+            <p class="stage-number-display" style="position: relative; top: 7rem; left: 4.4rem;">Stage 1</p>
+            <img src="/img/stage.svg" alt="Image of a payload">
+        </div>
+
+        <div class="input-box">
+        </div>
+
+        <div class="input-display">
+            <button id="AddStageButton"><img src="/img/addButton.svg" alt="Add Button"></button>
+        </div>
+    </div>
+
+    <button id="CalculateButton">Calculate</button>
+
+    <div id="OutputSection" class="output-section">
+
+        <p id="test"></p>
+
+    </div>
+
+</div>
+
+<footer class="black-bg">
+    <h3>Contanct Details:</h3>
+    <p id="email">OrcaProgrammer@outlook.com</p>
+    <p>By Lukasz J. Poloczek-McCusker</p>
+</footer>
+
+<script src="/scripts/rocket-calculation.js"></script>

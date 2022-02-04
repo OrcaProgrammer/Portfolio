@@ -1,7 +1,9 @@
 nav {
     position: fixed;
+    top: 0;
     width: calc(100% - 10em);
     overflow: hidden;
+    z-index: 1;
 
     display: flex;
     flex-flow: row nowrap;

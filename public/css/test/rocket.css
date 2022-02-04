@@ -1,0 +1,54 @@
+.rocket-section {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    height: fit-content;
+}
+
+.rocket-section h3{
+    margin-bottom: 1rem;
+}
+
+.input-section {
+    display: grid;
+
+    row-gap: 2rem;
+    grid-template-columns: auto auto;
+
+    height: fit-content;
+    padding: 0;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.input-box {
+    height: 10rem;
+    padding: 0;
+
+    grid-column: 1;
+
+    display: flex;
+    align-items: center;
+}
+
+.input-display {
+    height: 10rem;
+    grid-column: 2;
+}
+
+.output-section {
+
+    height: fit-content;
+
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+#AddStageButton {
+    position: relative;
+    top: 5rem;
+    left: 5rem;
+    
+    padding: 0;
+    width: 30px;
+    height: 30px;
+}

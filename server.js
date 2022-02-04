@@ -6,20 +6,32 @@ const app = express();
 
 // App Configuration
 
-app.engine('.hbs', engine({ extname : '.hbs', defaultLayout : 'main'}));
+app.engine('.hbs', engine({ 
+    extname : '.hbs', defaultLayout : 'main', 
+    helpers: {
+        static: function(name) {
+        return require('./static.js').map(name);
+        }
+    }
+}));
 
 app.set('port', process.env.PORT || 8000);
 app.set('view engine', '.hbs');
 
 // App middleware
 
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static('public'));
 
 // App Routes
 
 app.get('/', function(req, res){
     var options = { title : 'Homepage'};
     res.render('home', options);
+});
+
+app.get('/rocket', function(req, res){
+    var options = { title : 'Rocket Calculator'};
+    res.render('rocket/rocket', options);
 });
 
 // custom 404 page
