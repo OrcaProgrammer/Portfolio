@@ -8,9 +8,9 @@ var sections = 2;
 
 AddStageButton.addEventListener('click', function () {
     
-    const InputLauMassText = document.querySelectorAll('p.stage-launch-mass');
-    const InputPropMassText = document.querySelectorAll('p.stage-propellant-mass');
-    const InputIspText = document.querySelectorAll('p.stage-isp');
+    const InputLauMassText = document.querySelectorAll('label.stage-launch-mass');
+    const InputPropMassText = document.querySelectorAll('label.stage-propellant-mass');
+    const InputIspText = document.querySelectorAll('label.stage-isp');
     const InputStageDisplayNumber = document.querySelectorAll('p.stage-number-display');
 
     sections += 1;
@@ -31,19 +31,23 @@ AddStageButton.addEventListener('click', function () {
 
     const inputBox = document.createElement('div');
     inputBox.className = 'input-box';
+    inputBox.style = 'grid-row:' + sections + ';';
     inputBox.innerHTML = `<form>
-    <p class="stage-launch-mass">Stage 1 Launch Mass:</p>
-    <input type="number" class="launch-mass-input" value="">Kg</input>
+    <label class="stage-launch-mass">Stage 1 Launch Mass:</label>
+    <input type="number" class="launch-mass-input" value=""> Kg</input>
+    <br><br>
 
-    <p class="stage-propellant-mass">Stage 1 Propellant Mass:</p>
-    <input type="number" class="prop-mass-input" value="">Kg</input>
+    <label class="stage-propellant-mass">Stage 1 Propellant Mass:</label>
+    <input type="number" class="prop-mass-input" value=""> Kg</input>
+    <br><br>
 
-    <p class="stage-isp">Stage 1 ISP:</p>
-    <input type="number" class="isp-input">s</input>
+    <label class="stage-isp">Stage 1 ISP:</label>
+    <input type="number" class="isp-input"> s</input>
     </form>`;
 
     const inputDisplay = document.createElement('div');
     inputDisplay.className = 'input-display';
+    inputDisplay.style = 'grid-row:' + sections + ';';
     inputDisplay.innerHTML = `
     <p class="stage-number-display" style="position: relative; top: 7rem; left: 4.4rem;">Stage 1</p>
     <img src="/img/stage.svg" alt="Image of a payload">
@@ -121,7 +125,7 @@ CalculateButton.addEventListener('click', function() {
     
     for (let i = 0; i < stages; i++) {
         
-        outputHTML += '<h3>Stage ' + (i + 1) + '</h3><br>';
+        outputHTML += '<h3>Stage ' + (stages - i) + '</h3><br>';
         outputHTML += '<p> Mass Ratio: ' + massRatios[i] + '</p><br>';
         outputHTML += '<p> Speed Increase: ' + speedIncreases[i] + ' m/s</p><br>';
         outputHTML += '<p> Structural Efficiency: ' + structuralEfficiencies[i] + '</p><br>';

@@ -8,6 +8,30 @@
     margin-bottom: 1rem;
 }
 
+input {
+    margin: 0 auto;
+    text-align: center;
+    border: 0;
+    border-bottom: 1px solid #5b5b5b;
+    width: 7rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .input-section {
     display: grid;
 
@@ -39,8 +63,15 @@
 
     height: fit-content;
 
-    margin-top: 4rem;
+    margin-top: 8rem;
     margin-bottom: 4rem;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.output-wrapper {
+    margin-left: 0;
+    padding-left: 0;
 }
 
 #AddStageButton {
@@ -51,4 +82,8 @@
     padding: 0;
     width: 30px;
     height: 30px;
+}
+
+#ResetButton {
+    margin-left: 5rem;
 }
