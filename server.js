@@ -22,6 +22,11 @@ app.set('view engine', '.hbs');
 
 app.use(express.static('public'));
 
+app.use((req, res, next) => {
+    res.locals.showTests = app.get('env') !== 'production' && req.query.test === '1';
+    next();
+});
+
 // App Routes
 
 app.get('/', function(req, res){
