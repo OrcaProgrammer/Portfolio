@@ -1,41 +1,63 @@
 
 <div class="rocket-section">
 
-    <h3>Rocket</h1>
+    <h3>Rocket</h3>
     <p>Input values for each of the stages and click calculate for find the basic properties of the rocket. 
         Click on the add button to add another stage and refresh the page to reset everything.</p>
+
+    <br><br>
+    
+    <!--
+    <form action="">
+        <label for="">Options:</label>
+
+        <input type="checkbox" id="isp-checkbox" class="options-checkbox" checked>
+        <label for="Isp">Isp</label>
+
+        <input type="checkbox" id="thrust-mass-flow-checkbox" class="options-checkbox">
+        <label for="Thrust-Mass-flow">Thrust/mass flow</label>
+    </form>
+    -->
 
     <div id="InputSection" class="input-section">
 
         <div class="input-box">
             <form action="">
                 <label>Payload Mass:</label>
-                <input type="number" class="payload-mass-input" value=""> Kg</input>
+                <input type="number" class="number-input payload-mass-input" value=""> Kg</input>
+                <br><br>
+
+                <label>Fairing Mass:</label>
+                <input type="number" class="number-input fairing-mass-input" value=""> Kg</input>
             </form>
         </div>
         
         <div class="input-display">
-            <p style="position: relative; top: 7rem; left: 4.4rem;">Payload</p>
+            <p>Payload</p>
             <img src="/img/payload.svg" alt="Image of a payload">
         </div>
 
         <div class="input-box">
             <form>
                 <label class="stage-launch-mass">Stage 1 Launch Mass:</label>
-                <input type="number" class="launch-mass-input" value=""> Kg</input>
+                <input type="text" class="number-input launch-mass-input" value=""> Kg</input>
                 <br><br>
 
                 <label class="stage-propellant-mass">Stage 1 Propellant Mass:</label>
-                <input type="number" class="prop-mass-input" value=""> Kg</input>
+                <input type="number" class="number-input prop-mass-input" value=""> Kg</input>
                 <br><br>
 
-                <label class="stage-isp">Stage 1 ISP:</label>
-                <input type="number" class="isp-input"> s</input>
+                <label class="stage-thrust">Stage 1 Thrust:</label>
+                <input type="number" class="number-input thrust-input"> N</input>
+                <br><br>
+
+                <label class="stage-mass-flow">Stage 1 Mass Flow:</label>
+                <input type="number" class="number-input mass-flow-input"> kg/s</input>
             </form>
         </div>
 
         <div class="input-display">
-            <p class="stage-number-display" style="position: relative; top: 7rem; left: 4.4rem;">Stage 1</p>
+            <p class="stage-number-display">Stage 1</p>
             <img src="/img/stage.svg" alt="Image of a payload">
         </div>
 

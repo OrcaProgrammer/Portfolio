@@ -4,13 +4,21 @@ const OutputSection = document.getElementById('OutputSection');
 const CalculateButton = document.getElementById('CalculateButton');
 const Footer = document.querySelector('footer');
 
-var sections = 2;
+const NumberInputs = document.querySelectorAll('input.number-input');
+const OptionsCheckboxes = document.querySelectorAll('input.options-checkbox');
 
-AddStageButton.addEventListener('click', function () {
+var sections = 2;
+var isp_option = true;
+var thrust_mass_flow_option = false;
+
+console.log(NumberInputs);
+
+AddStageButton.addEventListener('click', () => {
     
     const InputLauMassText = document.querySelectorAll('label.stage-launch-mass');
     const InputPropMassText = document.querySelectorAll('label.stage-propellant-mass');
-    const InputIspText = document.querySelectorAll('label.stage-isp');
+    const InputThrustText = document.querySelectorAll('label.stage-thrust');
+    const InputMassFlowText = document.querySelectorAll('label.stage-mass-flow');
     const InputStageDisplayNumber = document.querySelectorAll('p.stage-number-display');
 
     sections += 1;
@@ -18,14 +26,16 @@ AddStageButton.addEventListener('click', function () {
     for (let i = 0; i < (sections - 2); i++) {
         const LauMassText = InputLauMassText[i];
         const PropMassText = InputPropMassText[i];
-        const IspText = InputIspText[i];
+        const ThrustText = InputThrustText[i];
+        const MassFlowText = InputMassFlowText[i];
         const StageDisplayNumber = InputStageDisplayNumber[i];
 
         var stageNumber = sections - (i + 1);
 
         LauMassText.innerHTML = "Stage " + stageNumber.toString() + " Launch Mass:";
         PropMassText.innerHTML = "Stage " + stageNumber.toString() + " Propellant Mass:";
-        IspText.innerHTML = "Stage " + stageNumber.toString() + " ISP:";
+        ThrustText.innerHTML = "Stage " + stageNumber.toString() + " Thrust:";
+        MassFlowText.innerHTML = "Stage " + stageNumber.toString() + " Mass Flow:";
         StageDisplayNumber.innerHTML = "Stage " + stageNumber.toString() ;
     }
 
@@ -33,23 +43,27 @@ AddStageButton.addEventListener('click', function () {
     inputBox.className = 'input-box';
     inputBox.style = 'grid-row:' + sections + ';';
     inputBox.innerHTML = `<form>
-    <label class="stage-launch-mass">Stage 1 Launch Mass:</label>
-    <input type="number" class="launch-mass-input" value=""> Kg</input>
-    <br><br>
+        <label class="stage-launch-mass">Stage 1 Launch Mass:</label>
+        <input type="number" class="number-input launch-mass-input" value=""> Kg</input>
+        <br><br>
 
-    <label class="stage-propellant-mass">Stage 1 Propellant Mass:</label>
-    <input type="number" class="prop-mass-input" value=""> Kg</input>
-    <br><br>
+        <label class="stage-propellant-mass">Stage 1 Propellant Mass:</label>
+        <input type="number" class="number-input prop-mass-input" value=""> Kg</input>
+        <br><br>
 
-    <label class="stage-isp">Stage 1 ISP:</label>
-    <input type="number" class="isp-input"> s</input>
+        <label class="stage-thrust">Stage 1 Thrust:</label>
+        <input type="number" class="number-input thrust-input"> N</input>
+        <br><br>
+
+        <label class="stage-mass-flow">Stage 1 Mass Flow:</label>
+        <input type="number" class="number-input mass-flow-input"> kg/s</input>
     </form>`;
 
     const inputDisplay = document.createElement('div');
     inputDisplay.className = 'input-display';
     inputDisplay.style = 'grid-row:' + sections + ';';
     inputDisplay.innerHTML = `
-    <p class="stage-number-display" style="position: relative; top: 7rem; left: 4.4rem;">Stage 1</p>
+    <p class="stage-number-display">Stage 1</p>
     <img src="/img/stage.svg" alt="Image of a payload">
     `;
 
@@ -58,7 +72,7 @@ AddStageButton.addEventListener('click', function () {
 
 }, false);
 
-CalculateButton.addEventListener('click', function() {
+CalculateButton.addEventListener('click', () => {
 
     const PayloadMassInput = document.querySelector('input.payload-mass-input');
     const LauMassInput = document.querySelectorAll('input.launch-mass-input');
@@ -149,6 +163,25 @@ CalculateButton.addEventListener('click', function() {
     OutputSection.appendChild(outputWrapper);
     Footer.style.visibility = "hidden";
 }, false);
+
+OptionsCheckboxes.forEach( (element) => {
+    element.addEventListener('onchange', () => {
+        switch (element.id) {
+            case 'isp-checkbox':
+                isp_option = true;
+                thrust_mass_flow_option = false;
+                break;
+        
+            case '':
+                isp_option = false;
+                thrust_mass_flow_option = true;
+                break;
+
+            default:
+                break;
+        }
+    });
+});
 
 function mass_ratio(Ml, Mf) {
     return Ml / (Ml - Mf);

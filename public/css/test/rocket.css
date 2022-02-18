@@ -32,6 +32,15 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+input {
+    width: fit-content;
+}
+
+.options-checkbox {
+    margin-left: 2.5rem;
+    margin-right: .75rem;
+}
+
 .input-section {
     display: grid;
 
@@ -57,6 +66,29 @@ input[type=number] {
 .input-display {
     height: 10rem;
     grid-column: 2;
+}
+
+.input-display img {
+    position: relative;
+    top: -2.5rem;
+    left: 7rem;
+}
+
+.input-display p{
+    position: relative; 
+    top: 4.5rem; 
+    left: 11.4rem;
+}
+
+#last-input-display {
+    padding-top: -10%;
+    padding-left: 34.5%;
+}
+
+.input-display button img{
+    position: relative; 
+    top: 0; 
+    left: 0;
 }
 
 .output-section {
