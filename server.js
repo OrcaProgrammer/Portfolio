@@ -9,8 +9,10 @@ const app = express();
 app.engine('.hbs', engine({ 
     extname : '.hbs', defaultLayout : 'main', 
     helpers: {
-        static: function(name) {
-        return require('./static.js').map(name);
+        section: function(name, options){
+            if(!this._sections) this._sections = {};
+            this._sections[name] = options.fn(this);
+            return null;
         }
     }
 }));
