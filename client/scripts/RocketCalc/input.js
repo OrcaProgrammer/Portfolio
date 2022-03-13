@@ -1,9 +1,9 @@
 
-export function getInputFromHtml(selector) {
+module.exports = function getInputFromHtml(selector) {
     const inputElements = document.querySelectorAll(selector);
     const inputs = [];
     inputElements.forEach(element => {
         inputs.push(Number(element.value));
     });
     return inputs;
-}
+};

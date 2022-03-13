@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "grunt start && node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -27,10 +27,12 @@
     "chromedriver": "^97.0.4",
     "grunt": "^1.4.1",
     "grunt-browserify": "^6.0.0",
+    "grunt-contrib-jshint": "^3.2.0",
     "grunt-contrib-uglify": "^5.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-express-server": "^0.5.4",
     "jshint": "^2.13.4",
     "mocha": "^9.2.0",
-    "nodemon": "^2.0.15",
     "selenium-webdriver": "^4.1.1"
   }
 }
